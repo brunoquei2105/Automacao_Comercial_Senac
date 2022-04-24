@@ -11,4 +11,5 @@ public class HumidityDTO implements Serializable {
 
     @NotBlank
     private String humidity;
+    private String date_time;
 }

@@ -22,7 +22,7 @@ public class HumidityModel implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     @Column(name = "temperature")
-    private BigDecimal temp;
+    private BigDecimal humidity;
     @Column(name = "date_hour")
     private LocalDateTime time;
 }
