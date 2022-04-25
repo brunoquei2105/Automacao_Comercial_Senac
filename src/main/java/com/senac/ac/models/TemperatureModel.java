@@ -24,7 +24,7 @@ public class TemperatureModel implements Serializable {
     @Column(name = "temperature")
     private BigDecimal temp;
     @Column(name = "date_hour")
-    private LocalDateTime time;
+    private LocalDateTime time = LocalDateTime.now();
 
 
 }

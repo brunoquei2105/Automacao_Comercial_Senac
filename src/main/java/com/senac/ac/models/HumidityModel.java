@@ -24,5 +24,5 @@ public class HumidityModel implements Serializable {
     @Column(name = "temperature")
     private BigDecimal humidity;
     @Column(name = "date_hour")
-    private LocalDateTime time;
+    private LocalDateTime time = LocalDateTime.now();
 }
