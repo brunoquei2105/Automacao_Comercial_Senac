@@ -25,7 +25,7 @@ public class SpringFoxConfig {
     private ApiInfo apiInfo() {
         return new ApiInfoBuilder()
                 .title("Api to collect data of IoT device.")
-                .description("Commercial Automation class of Prof.Arnott Caiado")
+                .description("Commercial Automation- Prof.Arnott Caiado")
                 .version("1.0.0")
                 .license("Apache License Version 2.0")
                 .licenseUrl("https://www.apache.org/licenses/LICENSE-2.0")

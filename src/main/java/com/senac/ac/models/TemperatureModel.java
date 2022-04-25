@@ -1,5 +1,6 @@
 package com.senac.ac.models;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.Data;
 
 import javax.persistence.Column;
@@ -24,6 +25,7 @@ public class TemperatureModel implements Serializable {
     @Column(name = "temperature")
     private BigDecimal temp;
     @Column(name = "date_hour")
+    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd'T'HH:mm:ss'Z'", timezone = "GMT-3")
     private LocalDateTime time = LocalDateTime.now();
 
 
