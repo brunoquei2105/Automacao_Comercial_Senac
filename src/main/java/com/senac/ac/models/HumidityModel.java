@@ -12,6 +12,7 @@ import javax.persistence.Table;
 import java.io.Serializable;
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 
 @Data
 @Entity
@@ -19,10 +20,12 @@ import java.time.LocalDateTime;
 public class HumidityModel implements Serializable {
     private static final long serialVersionUID = 8358667377785139270L;
 
+    private LocalDateTime date = LocalDateTime.now();
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    @Column(name = "temperature")
+    @Column(name = "humidity")
     private BigDecimal humidity;
     @Column(name = "date_hour")
     @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd'T'HH:mm:ss'Z'", timezone = "GMT-3")
