@@ -115,31 +115,6 @@
                     </excludes>
                 </configuration>
             </plugin>
-            <plugin>
-                <groupId>org.openapitools</groupId>
-                <artifactId>openapi-generator-maven-plugin</artifactId>
-                <executions>
-                    <execution>
-                        <goals>
-                            <goal>generate</goal>
-                        </goals>
-                        <configuration>
-                            <inputSpec>
-                                ${project.basedir}/src/main/resources/automation.yml
-                            </inputSpec>
-                            <generatorName>spring</generatorName>
-                            <apiPackage>com.senac.ac.controllers.api</apiPackage>
-                            <modelPackage>com.senac.ac.models</modelPackage>
-                            <supportingFilesToGenerate>
-                                ApiUtil.java
-                            </supportingFilesToGenerate>
-                            <configOptions>
-                                <delegatePattern>true</delegatePattern>
-                            </configOptions>
-                        </configuration>
-                    </execution>
-                </executions>
-            </plugin>
         </plugins>
     </build>
 
