@@ -7,6 +7,7 @@ import io.swagger.annotations.ApiOperation;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -31,6 +32,7 @@ public interface TemperatureApi {
     @ApiOperation(value = "", nickname = "Create Temperature", notes = "", response = TemperatureModel.class, tags = {})
     @PostMapping(value = "/save/temperature")
     @ResponseStatus(value = HttpStatus.CREATED)
+    @PreAuthorize("hasRole('ADMIN')")
     default ResponseEntity<TemperatureDTO> postTemp(@RequestBody TemperatureModel temperature,
                                                  @RequestHeader HttpHeaders headers){
         return new ResponseEntity<>(HttpStatus.NOT_IMPLEMENTED);
