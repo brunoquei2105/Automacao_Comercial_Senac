@@ -4,6 +4,7 @@ import com.senac.ac.DTO.UserDTO;
 import com.senac.ac.controllers.api.UserApi;
 import com.senac.ac.models.User;
 import com.senac.ac.service.UserService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -21,6 +22,7 @@ public class UserController implements UserApi {
     private final UserService userService;
     private final PasswordEncoder encoder;
 
+    @Autowired
     public UserController(UserService userService, PasswordEncoder encoder){
 
         this.userService = userService;

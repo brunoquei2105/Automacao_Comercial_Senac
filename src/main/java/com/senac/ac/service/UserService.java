@@ -4,6 +4,7 @@ import com.senac.ac.DTO.UserDTO;
 import com.senac.ac.factory.UserFactory;
 import com.senac.ac.models.User;
 import com.senac.ac.repository.UserRepository;
+import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -30,8 +31,9 @@ public class UserService {
         return dto;
     }
 
-    public Optional<User> getByUserName(String userName){
-        Optional<User> user = userRepository.findByUserName(userName);
+    public Optional<User> getByUserName(String userName) throws UsernameNotFoundException {
+        Optional<User> user =Optional.ofNullable( userRepository.findByUserName(userName))
+                .orElseThrow(() -> new UsernameNotFoundException("User not Found!"));
         return user;
 
     }
